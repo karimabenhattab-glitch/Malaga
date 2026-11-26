@@ -8,12 +8,101 @@
 <link rel="stylesheet" href="malaga-trip-2026-styles.css">
 </head>
 <body>
+
+<!-- Illustrationen (Pastell-Szenen, werden per <use> eingebunden) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+<defs>
+  <linearGradient id="g-day" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c9ecf3"/><stop offset="1" stop-color="#fff2d6"/></linearGradient>
+  <linearGradient id="g-dusk" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e2d6f6"/><stop offset="1" stop-color="#ffd9cf"/></linearGradient>
+  <linearGradient id="g-mint" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d2f1e5"/><stop offset="1" stop-color="#fff5da"/></linearGradient>
+  <linearGradient id="g-peach" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffdcc9"/><stop offset="1" stop-color="#d6ecf6"/></linearGradient>
+
+  <symbol id="ill-plane" viewBox="0 0 400 180">
+    <rect width="400" height="180" fill="url(#g-day)"/>
+    <circle cx="320" cy="48" r="28" fill="#ffe08f"/>
+    <ellipse cx="90" cy="40" rx="38" ry="12" fill="#fff" opacity=".9"/><ellipse cx="115" cy="34" rx="26" ry="11" fill="#fff" opacity=".9"/>
+    <ellipse cx="260" cy="100" rx="42" ry="11" fill="#fff" opacity=".8"/>
+    <g transform="translate(170 78) rotate(-8)"><ellipse rx="42" ry="9" fill="#fff"/><path d="M-36 -2 L-50 -22 L-40 -22 L-24 -4Z" fill="#fff"/><path d="M-6 2 L10 28 L22 28 L12 0Z" fill="#e9f3f8"/><path d="M-6 -2 L8 -22 L18 -22 L10 -2Z" fill="#e9f3f8"/><circle cx="26" cy="-1" r="2.2" fill="#9ccfe0"/><circle cx="16" cy="-1" r="2.2" fill="#9ccfe0"/></g>
+    <rect y="132" width="400" height="48" fill="#9edbe0"/><path d="M0 146 Q25 138 50 146 T100 146 T150 146 T200 146 T250 146 T300 146 T350 146 T400 146 V180 H0Z" fill="#7cc8d1" opacity=".6"/>
+  </symbol>
+
+  <symbol id="ill-home" viewBox="0 0 400 180">
+    <rect width="400" height="180" fill="url(#g-peach)"/>
+    <circle cx="86" cy="112" r="34" fill="#ffd28a"/>
+    <ellipse cx="300" cy="36" rx="36" ry="11" fill="#fff" opacity=".85"/><ellipse cx="322" cy="31" rx="24" ry="10" fill="#fff" opacity=".85"/>
+    <g transform="translate(250 70) rotate(-6)"><ellipse rx="42" ry="9" fill="#fff"/><path d="M-36 -2 L-50 -22 L-40 -22 L-24 -4Z" fill="#fff"/><path d="M-6 2 L10 28 L22 28 L12 0Z" fill="#f1e9ee"/><path d="M-6 -2 L8 -22 L18 -22 L10 -2Z" fill="#f1e9ee"/></g>
+    <rect y="132" width="400" height="48" fill="#a9d6e6"/><path d="M0 146 Q25 138 50 146 T100 146 T150 146 T200 146 T250 146 T300 146 T350 146 T400 146 V180 H0Z" fill="#8ac2d8" opacity=".6"/>
+    <path d="M40 140 H132" stroke="#ffd28a" stroke-width="5" stroke-linecap="round" opacity=".7"/>
+  </symbol>
+
+  <symbol id="ill-wine" viewBox="0 0 400 180">
+    <rect width="400" height="180" fill="url(#g-dusk)"/>
+    <circle cx="330" cy="40" r="22" fill="#fff0c8"/>
+    <path d="M0 130 Q70 90 140 120 T280 115 T400 120 V180 H0Z" fill="#d3c1ec"/>
+    <rect y="140" width="400" height="40" fill="#e3d6f1"/>
+    <g transform="translate(150 66)"><path d="M-20 0 Q-20 38 0 40 Q20 38 20 0Z" fill="#fff" fill-opacity=".55" stroke="#8a74b5" stroke-width="3"/><path d="M-18 14 Q-18 38 0 38 Q18 38 18 14Z" fill="#e9806c"/><rect x="-2" y="40" width="4" height="30" fill="#8a74b5"/><ellipse cy="72" rx="16" ry="4" fill="#8a74b5"/></g>
+    <g transform="translate(232 66)"><path d="M-20 0 Q-20 38 0 40 Q20 38 20 0Z" fill="#fff" fill-opacity=".55" stroke="#8a74b5" stroke-width="3"/><path d="M-18 16 Q-18 38 0 38 Q18 38 18 16Z" fill="#ffd98e"/><rect x="-2" y="40" width="4" height="30" fill="#8a74b5"/><ellipse cy="72" rx="16" ry="4" fill="#8a74b5"/></g>
+    <g fill="#a98ad9"><circle cx="330" cy="122" r="9"/><circle cx="346" cy="122" r="9"/><circle cx="338" cy="136" r="9"/><circle cx="322" cy="136" r="9"/><circle cx="354" cy="136" r="9"/></g>
+    <path d="M338 112 q2 -14 12 -18" stroke="#6aa97f" stroke-width="3" fill="none"/>
+  </symbol>
+
+  <symbol id="ill-pilates" viewBox="0 0 400 180">
+    <rect width="400" height="180" fill="url(#g-mint)"/>
+    <circle cx="70" cy="46" r="26" fill="#ffe08f"/>
+    <rect y="138" width="400" height="42" fill="#bfe8d2"/>
+    <g transform="translate(330 138)"><path d="M0 0 Q4 -50 -2 -82" stroke="#b58a62" stroke-width="6" fill="none" stroke-linecap="round"/><g fill="#7cc79a"><path d="M-2 -82 Q-30 -92 -44 -72 Q-20 -80 -2 -82Z"/><path d="M-2 -82 Q26 -94 44 -74 Q20 -80 -2 -82Z"/><path d="M-2 -82 Q-12 -108 -30 -112 Q-14 -98 -2 -82Z"/><path d="M-2 -82 Q10 -108 28 -110 Q12 -96 -2 -82Z"/></g></g>
+    <rect x="120" y="136" width="170" height="9" rx="4.5" fill="#e9806c"/>
+    <g stroke="#5f9fbd" stroke-width="7" stroke-linecap="round" fill="none"><path d="M205 96 V120"/><path d="M205 120 L193 134"/><path d="M205 120 L220 112 L205 104"/><path d="M205 102 L184 84"/><path d="M205 102 L226 84"/></g>
+    <circle cx="205" cy="82" r="11" fill="#f2c6a0"/>
+  </symbol>
+
+  <symbol id="ill-caminito" viewBox="0 0 400 180">
+    <rect width="400" height="180" fill="url(#g-day)"/>
+    <circle cx="200" cy="38" r="22" fill="#ffe08f"/>
+    <path d="M0 90 L70 40 L130 80 L190 50 L260 85 L330 45 L400 85 V180 H0Z" fill="#c8d8e8"/>
+    <path d="M0 60 H128 L150 180 H0Z" fill="#dccab8"/><path d="M400 60 H272 L250 180 H400Z" fill="#cdb9a5"/>
+    <path d="M128 60 L150 180 H250 L272 60Z" fill="#a9d9e0" opacity=".55"/>
+    <path d="M150 168 Q200 156 250 168 V180 H150Z" fill="#7cc8d1"/>
+    <path d="M0 100 H146 M254 100 H400" stroke="#e9806c" stroke-width="6"/><path d="M134 100 L266 100" stroke="#e9806c" stroke-width="6" stroke-dasharray="2 0"/>
+    <g stroke="#b04f3d" stroke-width="2"><path d="M20 100 V88 M60 100 V88 M100 100 V88 M160 100 V88 M200 100 V88 M240 100 V88 M300 100 V88 M340 100 V88 M380 100 V88"/><path d="M0 88 H134 M166 88 H234 M266 88 H400"/></g>
+    <g fill="#5f9fbd"><circle cx="190" cy="82" r="4"/><circle cx="210" cy="82" r="4"/><circle cx="60" cy="82" r="4"/></g>
+  </symbol>
+
+  <symbol id="ill-trip" viewBox="0 0 400 180">
+    <rect width="400" height="180" fill="url(#g-day)"/>
+    <circle cx="330" cy="40" r="24" fill="#ffe08f"/>
+    <rect y="130" width="400" height="50" fill="#9edbe0"/><path d="M0 142 Q25 134 50 142 T100 142 T150 142 T200 142 T250 142 T300 142 T350 142 T400 142 V180 H0Z" fill="#7cc8d1" opacity=".6"/>
+    <path d="M0 132 Q90 70 190 100 T400 120 V135 H0Z" fill="#cfe3b8"/>
+    <g fill="#fff" stroke="#e3d8c8" stroke-width="1.5"><rect x="60" y="92" width="34" height="28"/><rect x="100" y="84" width="30" height="34"/><rect x="136" y="96" width="36" height="26"/><rect x="178" y="100" width="30" height="24"/><rect x="214" y="106" width="34" height="22"/><rect x="82" y="68" width="28" height="26"/></g>
+    <g fill="#e9806c"><path d="M58 92 L77 80 L96 92Z"/><path d="M98 84 L115 72 L132 84Z"/><path d="M134 96 L154 84 L174 96Z"/><path d="M80 68 L96 58 L112 68Z"/></g>
+    <g fill="#8fb7c9"><rect x="72" y="102" width="8" height="12"/><rect x="110" y="96" width="8" height="12"/><rect x="150" y="106" width="8" height="12"/></g>
+  </symbol>
+
+  <symbol id="ill-villa" viewBox="0 0 400 180">
+    <rect width="400" height="180" fill="url(#g-day)"/>
+    <circle cx="340" cy="38" r="26" fill="#ffe08f"/>
+    <rect y="140" width="400" height="40" fill="#cfe9d4"/>
+    <rect x="120" y="76" width="170" height="64" fill="#fff" stroke="#e8dccb" stroke-width="2"/>
+    <path d="M108 78 L205 38 L302 78Z" fill="#e9806c"/>
+    <rect x="190" y="100" width="30" height="40" rx="3" fill="#8fb7c9"/>
+    <rect x="136" y="92" width="34" height="26" fill="#cde8f0"/><rect x="240" y="92" width="34" height="26" fill="#cde8f0"/>
+    <ellipse cx="62" cy="150" rx="46" ry="11" fill="#8fd3d9" stroke="#fff" stroke-width="4"/>
+    <g stroke="#fff" stroke-width="3" fill="none" opacity=".9" stroke-linecap="round"><path d="M50 138 q-6 -10 0 -18"/><path d="M66 138 q-6 -10 0 -18"/><path d="M80 140 q-5 -8 0 -14"/></g>
+    <g transform="translate(345 144)"><path d="M0 0 Q4 -44 -2 -70" stroke="#b58a62" stroke-width="6" fill="none" stroke-linecap="round"/><g fill="#7cc79a"><path d="M-2 -70 Q-30 -80 -44 -60 Q-20 -68 -2 -70Z"/><path d="M-2 -70 Q26 -82 44 -62 Q20 -68 -2 -70Z"/><path d="M-2 -70 Q-12 -96 -30 -100 Q-14 -86 -2 -70Z"/><path d="M-2 -70 Q10 -96 28 -98 Q12 -84 -2 -70Z"/></g></g>
+  </symbol>
+</defs>
+</svg>
+
 <header class="hero">
+  <span class="sun" aria-hidden="true"></span>
   <div class="wrap">
-    <p class="eyebrow">🎉 Geburtstagstrip · 15.–20. Dezember 2026</p>
-    <h1>¡Vamos a Málaga!</h1>
-    <button id="theme-toggle" class="theme-btn" type="button" aria-label="Hell/Dunkel umschalten">🌓 Design</button>
+    <div class="hero-top">
+      <p class="eyebrow">🎉 Geburtstagstrip · 15.–20. Dezember 2026</p>
+      <button id="theme-toggle" class="theme-btn" type="button" aria-label="Hell/Dunkel umschalten">🌓 Design</button>
+    </div>
+    <h1>¡Vamos a<br>Málaga!</h1>
   </div>
+  <svg class="waves" viewBox="0 0 400 60" preserveAspectRatio="none" aria-hidden="true"><path class="w2" d="M0 28 Q50 8 100 28 T200 28 T300 28 T400 28 V60 H0Z"/><path d="M0 40 Q50 24 100 40 T200 40 T300 40 T400 40 V60 H0Z"/></svg>
 </header>
 
 <main class="wrap">
@@ -21,49 +110,73 @@
 <!-- ================= STARTSEITE ================= -->
 <section id="view-home" class="view">
   <a class="villa-banner" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Pasaje+de+las+Espuelas+2%2C+M%C3%A1laga">
-    <span class="vb-label">🏡 Unsere Villa (mit Whirlpool)</span>
-    <span class="vb-address">Pasaje de las Espuelas 2, Málaga</span>
-    <span class="vb-hint">In Google Maps öffnen ↗</span>
+    <div class="ill" data-img="villa"><svg viewBox="0 0 400 180" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Illustration einer Villa mit Whirlpool und Palme"><use href="#ill-villa"/></svg></div>
+    <div class="vb-body">
+      <span class="vb-label">🏡 Unsere Villa · mit Whirlpool</span>
+      <span class="vb-address">Pasaje de las Espuelas 2, Málaga</span>
+      <span class="vb-line">🚗 Zwei Mietwagen sind gebucht</span>
+      <span class="vb-hint">In Google Maps öffnen ↗</span>
+    </div>
   </a>
 
-  <h2 class="home-h">Tagesablauf</h2>
-  <div class="tiles">
-    <a class="tile" href="#/tag-15"><span class="t-date">Di 15.12.</span><span class="t-title">Anreise</span><span class="t-sub">Hinflug nach Málaga</span></a>
-    <a class="tile" href="#/tag-16"><span class="t-date">Mi 16.12.</span><span class="t-title">Weinprobe &amp; Paella</span><span class="t-sub">18:00 · 21:00</span></a>
-    <a class="tile" href="#/tag-17"><span class="t-date">Do 17.12.</span><span class="t-title">Pilates in der Villa</span><span class="t-sub">danach Strand &amp; Bummeln</span></a>
-    <a class="tile" href="#/tag-18"><span class="t-date">Fr 18.12.</span><span class="t-title">Caminito del Rey</span><span class="t-sub">10:30 · Abfahrt ca. 8:15</span></a>
-    <a class="tile" href="#/tag-19"><span class="t-date">Sa 19.12.</span><span class="t-title">Ausflugstag</span><span class="t-sub">noch offen</span></a>
-    <a class="tile" href="#/tag-20"><span class="t-date">So 20.12.</span><span class="t-title">Rückflug</span><span class="t-sub">Heimreise</span></a>
+  <h2 class="home-h">Unser Weg</h2>
+  <div class="path">
+    <a class="node" href="#/tag-15">
+      <div class="ill" data-img="tag-15"><svg viewBox="0 0 400 180" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Flugzeug über dem Meer"><use href="#ill-plane"/></svg></div>
+      <div class="nb"><span class="date">Di 15.12.</span><span class="nt">Anreise</span><span class="ns">Hinflug nach Málaga</span><span class="wchip pending" data-date="2026-12-15">Vorhersage folgt</span></div>
+    </a>
+    <a class="node" href="#/tag-16">
+      <div class="ill" data-img="tag-16"><svg viewBox="0 0 400 180" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Weingläser und Trauben"><use href="#ill-wine"/></svg></div>
+      <div class="nb"><span class="date">Mi 16.12.</span><span class="nt">Weinprobe &amp; Paella</span><span class="ns">18:00 Weinprobe · 21:00 Tapas &amp; Paella</span><span class="wchip pending" data-date="2026-12-16">Vorhersage folgt</span></div>
+    </a>
+    <a class="node" href="#/tag-17">
+      <div class="ill" data-img="tag-17"><svg viewBox="0 0 400 180" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Pilates auf der Matte im Grünen"><use href="#ill-pilates"/></svg></div>
+      <div class="nb"><span class="date">Do 17.12.</span><span class="nt">Pilates in der Villa</span><span class="ns">11:00 Pilates · danach Strand &amp; Bummeln</span><span class="wchip pending" data-date="2026-12-17">Vorhersage folgt</span></div>
+    </a>
+    <a class="node" href="#/tag-18">
+      <div class="ill" data-img="tag-18"><svg viewBox="0 0 400 180" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Steg an der Felswand der Schlucht"><use href="#ill-caminito"/></svg></div>
+      <div class="nb"><span class="date">Fr 18.12.</span><span class="nt">Caminito del Rey</span><span class="ns">Abfahrt ca. 8:15 · Start 10:30</span><span class="wchip pending" data-date="2026-12-18">Vorhersage folgt</span></div>
+    </a>
+    <a class="node" href="#/tag-19">
+      <div class="ill" data-img="tag-19"><svg viewBox="0 0 400 180" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Weiße Häuser am Hang über dem Meer"><use href="#ill-trip"/></svg></div>
+      <div class="nb"><span class="date">Sa 19.12.</span><span class="nt">Ausflugstag</span><span class="ns">noch offen · Idee: Nerja &amp; Frigiliana</span><span class="wchip pending" data-date="2026-12-19">Vorhersage folgt</span></div>
+    </a>
+    <a class="node" href="#/tag-20">
+      <div class="ill" data-img="tag-20"><svg viewBox="0 0 400 180" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Flugzeug im Abendlicht"><use href="#ill-home"/></svg></div>
+      <div class="nb"><span class="date">So 20.12.</span><span class="nt">Rückflug</span><span class="ns">Heimreise</span><span class="wchip pending" data-date="2026-12-20">Vorhersage folgt</span></div>
+    </a>
   </div>
 
   <h2 class="home-h">Themen</h2>
   <div class="tiles">
-    <a class="tile theme" href="#/wetter"><span class="t-icon">🌤️</span><span class="t-title">Wetter</span><span class="t-sub" id="tile-weather-sub">Live für Málaga</span></a>
-    <a class="tile theme" href="#/packliste"><span class="t-icon">🎒</span><span class="t-title">Packliste</span><span class="t-sub">zum Abhaken</span></a>
-    <a class="tile theme" href="#/sehenswertes"><span class="t-icon">🏰</span><span class="t-title">Sehenswertes</span><span class="t-sub">Málaga entdecken</span></a>
-    <a class="tile theme" href="#/maerkte"><span class="t-icon">🎄</span><span class="t-title">Weihnachtsmärkte</span><span class="t-sub">Lichter &amp; Stände</span></a>
-    <a class="tile theme" href="#/wunschliste"><span class="t-icon">💌</span><span class="t-title">Wunschliste</span><span class="t-sub">Eure Wünsche</span></a>
-    <a class="tile theme" href="#/info"><span class="t-icon">🚗</span><span class="t-title">Villa &amp; Mietwagen</span><span class="t-sub">Praktisches</span></a>
+    <a class="tile c1" href="#/wetter"><span class="t-icon">🌤️</span><span class="t-title">Wetter</span><span class="t-sub" id="tile-weather-sub">Live für Málaga</span></a>
+    <a class="tile c2" href="#/packliste"><span class="t-icon">🎒</span><span class="t-title">Packliste</span><span class="t-sub">zum Abhaken</span></a>
+    <a class="tile c3" href="#/sehenswertes"><span class="t-icon">🏰</span><span class="t-title">Sehenswertes</span><span class="t-sub">Málaga entdecken</span></a>
+    <a class="tile c4" href="#/maerkte"><span class="t-icon">🎄</span><span class="t-title">Weihnachtsmärkte</span><span class="t-sub">Lichter &amp; Stände</span></a>
+    <a class="tile c5" href="#/wunschliste"><span class="t-icon">💌</span><span class="t-title">Wunschliste</span><span class="t-sub">Eure Wünsche</span></a>
   </div>
 </section>
 
 <!-- ================= TAGE ================= -->
 <section id="view-tag-15" class="view" hidden>
   <a class="back" href="#/">← Übersicht</a>
+  <div class="ill big" data-img="tag-15"><svg viewBox="0 0 400 180" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Flugzeug über dem Meer"><use href="#ill-plane"/></svg></div>
   <article class="card">
     <h2><span class="date">Di 15.12.</span> Anreise</h2>
     <p>Hinflug nach Málaga. Ab dem 16.12. sind alle vor Ort. Bitte Pass/Ausweis, Flugtickets und Führerscheine (Mietwagen) griffbereit halten.</p>
+    <p>🚗 Zwei Mietwagen sind bereits gebucht – Abholung und Fahrer bitte in den Buchungsbestätigungen nachsehen.</p>
   </article>
 </section>
 
 <section id="view-tag-16" class="view" hidden>
   <a class="back" href="#/">← Übersicht</a>
+  <div class="ill big" data-img="tag-16"><svg viewBox="0 0 400 180" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Weingläser und Trauben"><use href="#ill-wine"/></svg></div>
   <article class="card">
     <h2><span class="date">Mi 16.12.</span> Weinprobe &amp; Paella</h2>
     <ul class="timeline">
       <li><b>18:00</b> <span><strong>Weinprobe mit White Houses Tours</strong> <span class="tag ok">gebucht</span>
         <br>Gebucht ist das ca. 90-minütige Tasting in Málaga: 5 andalusische Weine dazu Ronda-Wurst, Málaga-Käse und traditionelle Häppchen (ab 18 Jahren). White Houses Tours ist ein Anbieter für Wein- und Kulinarik-Erlebnisse in der Region Málaga.
-        <br><span class="muted">Treffpunkt: siehe Buchungsbestätigung.</span></span></li>
+        <br><b>Treffpunkt:</b> Vinoteca Malaleche. Calle Armengual de la Mota 12, 29007 Málaga (im Centro Comercial Málaga Plaza).</span></li>
       <li><b>21:00</b> <span><strong>Tapas &amp; Paella bei „Los Marangos Niño de Guevara“</strong> <span class="tag ok">gebucht</span>
         <br>Spanische Küche (Tapas, Paella) im Zentrum von Málaga. Adresse: C. Niño de Guevara 3, 29008 Málaga.</span></li>
     </ul>
@@ -72,10 +185,11 @@
 
 <section id="view-tag-17" class="view" hidden>
   <a class="back" href="#/">← Übersicht</a>
+  <div class="ill big" data-img="tag-17"><svg viewBox="0 0 400 180" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Pilates auf der Matte im Grünen"><use href="#ill-pilates"/></svg></div>
   <article class="card">
     <h2><span class="date">Do 17.12.</span> Pilates in der Villa</h2>
     <ul class="timeline">
-      <li><b>Zeit</b> <span><strong>Pilates mit Trainerin Maria („Mj“)</strong> – kommt zur Villa (Spanierin, über Airbnb gebucht). Uhrzeit: <em>bitte ergänzen</em>.
+      <li><b>11:00</b> <span><strong>Pilates mit Trainerin Maria („Mj“)</strong> – kommt zur Villa (Spanierin, über Airbnb gebucht).
         <br>Laut Airbnb-Angebot: ca. 1 Stunde Pilates-Training im Freien an der Unterkunft, individuell anpassbar. Schwerpunkte: Functional Fitness, Pilates und hypopressive Übungen. Angegebene Erfahrung: 20 Jahre.</span></li>
       <li><b>Danach</b> <span>Offen: Kaffee am Strand (z. B. Playa de la Malagueta) und gemütlich bummeln – vielleicht über einen der <a href="#/maerkte">Weihnachtsmärkte</a>.</span></li>
     </ul>
@@ -84,6 +198,7 @@
 
 <section id="view-tag-18" class="view" hidden>
   <a class="back" href="#/">← Übersicht</a>
+  <div class="ill big" data-img="tag-18"><svg viewBox="0 0 400 180" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Steg an der Felswand der Schlucht"><use href="#ill-caminito"/></svg></div>
   <article class="card">
     <h2><span class="date">Fr 18.12.</span> Caminito del Rey</h2>
     <ul class="timeline">
@@ -99,6 +214,7 @@
 
 <section id="view-tag-19" class="view" hidden>
   <a class="back" href="#/">← Übersicht</a>
+  <div class="ill big" data-img="tag-19"><svg viewBox="0 0 400 180" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Weiße Häuser am Hang über dem Meer"><use href="#ill-trip"/></svg></div>
   <article class="card">
     <h2><span class="date">Sa 19.12.</span> Ausflugstag <span class="tag open">noch offen</span></h2>
     <p><strong>Idee 1: Nerja &amp; Frigiliana.</strong> Nerja (ca. 55 km ab Málaga, rund 50–60 Min. Fahrt) lockt mit Strandbuchten und der Promenade „Balcón de Europa“. Frigiliana (ca. 57 km, nur 6 km von Nerja, ca. 10–15 Min.) ist ein weiß getünchtes Bergdorf mit engen Gassen. Geführte Touren dauern 6–9 Std.; mit unseren Mietwagen geht es auch auf eigene Faust.</p>
@@ -109,6 +225,7 @@
 
 <section id="view-tag-20" class="view" hidden>
   <a class="back" href="#/">← Übersicht</a>
+  <div class="ill big" data-img="tag-20"><svg viewBox="0 0 400 180" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Flugzeug im Abendlicht"><use href="#ill-home"/></svg></div>
   <article class="card">
     <h2><span class="date">So 20.12.</span> Rückflug</h2>
     <p>Rückflug aller nach Hause. Villa aufräumen, Mietwagen zurückgeben, rechtzeitig zum Flughafen.</p>
@@ -189,22 +306,6 @@
     </form>
     <h3 class="sub">Alle Wünsche</h3>
     <ul id="wish-list" class="wishes"><li class="muted">Lade …</li></ul>
-  </div>
-</section>
-
-<section id="view-info" class="view" hidden>
-  <a class="back" href="#/">← Übersicht</a>
-  <h2>Villa &amp; Mietwagen</h2>
-  <div class="card villa">
-    <h3>🏡 Villa</h3>
-    <p class="address">Pasaje de las Espuelas 2, Málaga</p>
-    <p>Mit Whirlpool – Badesachen nicht vergessen!</p>
-    <a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Pasaje+de+las+Espuelas+2%2C+M%C3%A1laga">In Google Maps öffnen</a>
-  </div>
-  <div class="card">
-    <h3>🚗 Mietwagen</h3>
-    <p><strong>Zwei Mietwagen sind bereits gebucht.</strong></p>
-    <p class="muted">Details (Abholung, Fahrer) bitte in den Buchungsbestätigungen nachsehen.</p>
   </div>
 </section>
 

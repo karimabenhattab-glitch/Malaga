@@ -16,6 +16,12 @@ Statische Web-App (HTML/CSS/JS, kein Build) mit Programm, Wetter, Packliste, Seh
 ## Aufbau
 Startseite mit Kacheln: Villa-Adresse, Tagesablauf (15.–20.12.) und Themen (Wetter, Packliste, Sehenswertes, Weihnachtsmärkte, Wunschliste, Villa & Mietwagen). Jede Kachel öffnet eine Ansicht über den URL-Hash (`#/tag-18`, `#/maerkte` …), alles in einer HTML-Datei.
 
+## Eigene Fotos einbauen (optional)
+Standardmäßig zeigt die Seite gezeichnete Pastell-Illustrationen. Für echte Fotos (Villa, Pilates, Caminito …):
+1. Neuen Ordner `malaga-trip-2026-img/` im Dashboard-Ordner anlegen und Bilder hineinlegen (JPG, am besten unter 300 KB, Querformat).
+2. In `malaga-trip-2026-app.js` oben im Block `PHOTOS` den Pfad eintragen, z. B. `"villa": "malaga-trip-2026-img/villa.jpg"`.
+3. Lädt ein Foto nicht, bleibt die Illustration stehen. Nur Fotos verwenden, an denen du die Rechte hast (z. B. eigene oder aus deiner Airbnb-Buchung).
+
 ## In ein bestehendes Repo legen
 Den kompletten Ordner `malaga-trip-2026-dashboard/` unverändert ins Repo kopieren (z. B. neben anderen Projekten). Alle Dateien haben das Präfix `malaga-trip-2026-`, die Pfade sind relativ – es wird nichts überschrieben und nichts anderes angefasst. Ist GitHub Pages im Repo schon aktiv, erreichst du die Seite einfach über den Unterpfad (siehe unten).
 
@@ -46,7 +52,5 @@ Hinweise:
 - supabase-js wird nur bei gültiger Config von jsDelivr geladen (Version 2.45.4, fest gepinnt).
 
 ## Noch zu ergänzen / zu prüfen
-- Pilates mit Maria: Uhrzeit ergänzen.
-- Weinprobe: Treffpunkt laut Buchungsbestätigung ergänzen.
 - Caminito: Abfahrt 8:15 ist ein Richtwert; Eingang und Shuttle-Zeiten laut Ticket.
 - Öffnungszeiten der Sehenswürdigkeiten vor dem Besuch offiziell prüfen.

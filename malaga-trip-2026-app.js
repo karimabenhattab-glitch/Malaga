@@ -14,6 +14,22 @@
     try { localStorage.setItem("malaga-trip-2026-theme", next); } catch (e) {}
   });
 
+  /* ---------- Eigene Fotos (optional) ----------
+   Fotos in den Ordner "malaga-trip-2026-img/" legen und hier eintragen, z. B.
+   "villa": "malaga-trip-2026-img/villa.jpg". Leer = Illustration bleibt. */
+  var PHOTOS = {
+    "villa": "",
+    "tag-15": "", "tag-16": "", "tag-17": "", "tag-18": "", "tag-19": "", "tag-20": ""
+  };
+  Array.prototype.forEach.call(document.querySelectorAll(".ill[data-img]"), function (box) {
+    var src = PHOTOS[box.getAttribute("data-img")];
+    if (!src) return;
+    var img = new Image();
+    img.alt = ""; img.loading = "lazy";
+    img.onload = function () { box.appendChild(img); };
+    img.src = src;
+  });
+
   /* ---------- Navigation (Kacheln -> Ansichten, per URL-Hash) ---------- */
   function route() {
     var name = (location.hash || "").replace(/^#\/?/, "") || "home";
@@ -80,6 +96,13 @@
       });
       $("weather-trip").innerHTML = trip || '<p class="muted">Noch keine Daten für diese Tage.</p>';
       $("weather-days").innerHTML = rest;
+      Array.prototype.forEach.call(document.querySelectorAll(".wchip[data-date]"), function (chip) {
+        var i = dl.time.indexOf(chip.getAttribute("data-date"));
+        if (i === -1) return;
+        var cw = wmo(dl.weather_code[i]);
+        chip.textContent = cw[0] + " " + Math.round(dl.temperature_2m_max[i]) + "° / " + Math.round(dl.temperature_2m_min[i]) + "° · " + cw[1];
+        chip.classList.remove("pending");
+      });
       var note = $("weather-note");
       if (found < TRIP.length) {
         note.hidden = false;
