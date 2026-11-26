@@ -138,3 +138,17 @@ h3.sub{margin-top:1.2em;color:var(--sea)}
 .credits{margin:10px auto 0;max-width:600px;text-align:left;font-size:.8rem}
 .credits summary{cursor:pointer;text-align:center;color:var(--sea)}
 .credits ul{margin:8px 0 0;padding-left:18px}
+
+/* Entdecken-Kacheln */
+.tiles{display:grid;gap:12px;grid-template-columns:repeat(2,1fr)}
+.tile{display:grid;align-content:start;gap:3px;border-radius:16px;overflow:hidden;background:var(--surface);border:1px solid var(--line);box-shadow:var(--shadow);text-decoration:none;color:var(--text);transition:transform .12s;padding-bottom:12px}
+.tile:hover,.tile:focus-visible{transform:translateY(-2px)}
+.tile .ill.strip{height:84px;margin-bottom:8px}
+.tile .t-title{font-weight:700;font-size:.98rem;line-height:1.25;padding:0 12px}
+.tile .t-sub{font-size:.82rem;color:var(--muted);padding:0 12px}
+.mini{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.mini a{display:grid;justify-items:center;gap:2px;padding:12px 6px;border-radius:14px;background:var(--card);color:var(--text);text-decoration:none;font-weight:600;font-size:.9rem;box-shadow:var(--shadow)}
+.mini a span{font-size:1.5rem}
+.hero{padding-bottom:50px}
+.hero h1{margin:.3em 0 .35em}
+.villa-banner{margin-top:6px}

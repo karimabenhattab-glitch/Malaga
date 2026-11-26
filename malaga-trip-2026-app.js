@@ -22,15 +22,8 @@
     "villa": A + "villa.jpg",
     "tag-15": A + "tag-15.jpg", "tag-16": A + "tag-16.jpg", "tag-17": A + "tag-17.jpg",
     "tag-18": A + "tag-18.jpg", "tag-19": A + "tag-19.jpg", "tag-20": A + "tag-20.jpg",
-    "maerkte": A + "maerkte.jpg"
+    "maerkte": A + "maerkte.jpg", "essen": A + "essen.jpg"
   };
-
-  /* ---------- Countdown ---------- */
-  (function () {
-    var now = new Date(), today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
-    var days = Math.round((new Date(2026, 11, 15) - today) / 86400000);
-    $("stat-countdown").textContent = days > 0 ? String(days) : (days > -6 ? "🎉" : "✓");
-  })();
   Array.prototype.forEach.call(document.querySelectorAll(".ill[data-img]"), function (box) {
     var src = PHOTOS[box.getAttribute("data-img")];
     if (!src) return;
@@ -98,7 +91,6 @@
       var c = j.current, w = wmo(c.weather_code);
       $("weather-now").innerHTML = '<span class="big">' + w[0] + " " + Math.round(c.temperature_2m) + "°C</span><br>" + esc(w[1]) + " · gefühlt " + Math.round(c.apparent_temperature) +
         "° · Wind " + Math.round(c.wind_speed_10m) + " km/h · Luftfeuchte " + c.relative_humidity_2m + "%";
-      $("stat-temp").textContent = w[0] + " " + Math.round(c.temperature_2m) + "°C";
       var dl = j.daily, trip = "", rest = "", found = 0;
       dl.time.forEach(function (d, i) {
         if (TRIP.indexOf(d) !== -1) { trip += dayCard(d, i, dl, true); found++; }

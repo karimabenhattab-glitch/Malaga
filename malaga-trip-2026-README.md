@@ -14,7 +14,7 @@ Statische Web-App (HTML/CSS/JS, kein Build) mit Programm, Wetter, Packliste, Seh
 | `malaga-trip-2026-supabase-schema.sql` | Tabelle + RLS für Supabase |
 
 ## Aufbau
-Startseite mit Kacheln: Villa-Adresse, Tagesablauf (15.–20.12.) und Themen (Wetter, Packliste, Sehenswertes, Weihnachtsmärkte, Wunschliste, Villa & Mietwagen). Jede Kachel öffnet eine Ansicht über den URL-Hash (`#/tag-18`, `#/maerkte` …), alles in einer HTML-Datei.
+Startseite: Villa-Adresse ganz oben, darunter der Pfad mit den Tageskacheln (15.–20.12., mit Wetter-Chip), dann die Kacheln Sehenswürdigkeiten, Weihnachtsmärkte, Ausflugsideen (Samstag) und Restaurants & Cafés (inkl. Strandcafés), zuletzt Wetter, Packliste und Wunschliste. Jede Kachel öffnet eine Ansicht über den URL-Hash (`#/tag-18`, `#/ausflug`, `#/essen` …), alles in einer HTML-Datei.
 
 ## Bilder und Schrift
 Der Ordner `malaga-trip-2026-assets/` gehört zur Seite und muss mit hochgeladen werden (neben der HTML-Datei). Er enthält verkleinerte Fotos (je 10–70 KB, freie Lizenzen von Wikimedia Commons, Nachweis im Seitenfuß unter „Bildnachweis“) und die Schrift „Kaushan Script“ (lokal eingebunden, keine Verbindung zu Google).
