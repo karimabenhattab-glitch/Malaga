@@ -16,11 +16,10 @@ Statische Web-App (HTML/CSS/JS, kein Build) mit Programm, Wetter, Packliste, Seh
 ## Aufbau
 Startseite mit Kacheln: Villa-Adresse, Tagesablauf (15.–20.12.) und Themen (Wetter, Packliste, Sehenswertes, Weihnachtsmärkte, Wunschliste, Villa & Mietwagen). Jede Kachel öffnet eine Ansicht über den URL-Hash (`#/tag-18`, `#/maerkte` …), alles in einer HTML-Datei.
 
-## Eigene Fotos einbauen (optional)
-Standardmäßig zeigt die Seite gezeichnete Pastell-Illustrationen. Für echte Fotos (Villa, Pilates, Caminito …):
-1. Neuen Ordner `malaga-trip-2026-img/` im Dashboard-Ordner anlegen und Bilder hineinlegen (JPG, am besten unter 300 KB, Querformat).
-2. In `malaga-trip-2026-app.js` oben im Block `PHOTOS` den Pfad eintragen, z. B. `"villa": "malaga-trip-2026-img/villa.jpg"`.
-3. Lädt ein Foto nicht, bleibt die Illustration stehen. Nur Fotos verwenden, an denen du die Rechte hast (z. B. eigene oder aus deiner Airbnb-Buchung).
+## Bilder und Schrift
+Der Ordner `malaga-trip-2026-assets/` gehört zur Seite und muss mit hochgeladen werden (neben der HTML-Datei). Er enthält verkleinerte Fotos (je 10–70 KB, freie Lizenzen von Wikimedia Commons, Nachweis im Seitenfuß unter „Bildnachweis“) und die Schrift „Kaushan Script“ (lokal eingebunden, keine Verbindung zu Google).
+
+Eigene Fotos statt der Stockbilder (z. B. echtes Villa-Foto): Datei gleichen Namens in `malaga-trip-2026-assets/` ersetzen (z. B. `malaga-trip-2026-villa.jpg`, am besten ca. 560 px breit, unter 100 KB) oder den Pfad im Block `PHOTOS` in `malaga-trip-2026-app.js` ändern. Dann den Bildnachweis im Seitenfuß der HTML-Datei für dieses Bild anpassen/entfernen. Fehlt ein Foto, zeigt die Seite eine gezeichnete Illustration.
 
 ## In ein bestehendes Repo legen
 Den kompletten Ordner `malaga-trip-2026-dashboard/` unverändert ins Repo kopieren (z. B. neben anderen Projekten). Alle Dateien haben das Präfix `malaga-trip-2026-`, die Pfade sind relativ – es wird nichts überschrieben und nichts anderes angefasst. Ist GitHub Pages im Repo schon aktiv, erreichst du die Seite einfach über den Unterpfad (siehe unten).

@@ -97,10 +97,11 @@
   <span class="sun" aria-hidden="true"></span>
   <div class="wrap">
     <div class="hero-top">
-      <p class="eyebrow">🎉 Geburtstagstrip · 15.–20. Dezember 2026</p>
+      <p class="eyebrow">🎉 Geburtstagstrip</p>
       <button id="theme-toggle" class="theme-btn" type="button" aria-label="Hell/Dunkel umschalten">🌓 Design</button>
     </div>
     <h1>¡Vamos a<br>Málaga!</h1>
+    <span class="pill">15.–20. Dezember 2026</span>
   </div>
   <svg class="waves" viewBox="0 0 400 60" preserveAspectRatio="none" aria-hidden="true"><path class="w2" d="M0 28 Q50 8 100 28 T200 28 T300 28 T400 28 V60 H0Z"/><path d="M0 40 Q50 24 100 40 T200 40 T300 40 T400 40 V60 H0Z"/></svg>
 </header>
@@ -109,6 +110,21 @@
 
 <!-- ================= STARTSEITE ================= -->
 <section id="view-home" class="view">
+  <nav class="bubbles" aria-label="Themen">
+    <a class="bubble" href="#/wetter"><span class="b-ic">🌤️</span>Wetter</a>
+    <a class="bubble" href="#/packliste"><span class="b-ic">🎒</span>Packliste</a>
+    <a class="bubble" href="#/sehenswertes"><span class="b-ic">🏰</span>Sehens&shy;wertes</a>
+    <a class="bubble" href="#/maerkte"><span class="b-ic">🎄</span>Weihnachts&shy;märkte</a>
+    <a class="bubble" href="#/wunschliste"><span class="b-ic">💌</span>Wünsche</a>
+  </nav>
+
+  <div class="stats">
+    <div class="stat"><span class="s-ic">⏳</span><span class="s-l">Tage bis zum Trip</span><span class="s-v" id="stat-countdown">–</span></div>
+    <div class="stat"><span class="s-ic">🌡️</span><span class="s-l">Jetzt in Málaga</span><span class="s-v" id="stat-temp">–</span></div>
+    <div class="stat"><span class="s-ic">📅</span><span class="s-l">Reisetage</span><span class="s-v">6</span></div>
+    <div class="stat"><span class="s-ic">🚗</span><span class="s-l">Mietwagen</span><span class="s-v">2</span></div>
+  </div>
+
   <a class="villa-banner" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Pasaje+de+las+Espuelas+2%2C+M%C3%A1laga">
     <div class="ill" data-img="villa"><svg viewBox="0 0 400 180" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Illustration einer Villa mit Whirlpool und Palme"><use href="#ill-villa"/></svg></div>
     <div class="vb-body">
@@ -147,14 +163,6 @@
     </a>
   </div>
 
-  <h2 class="home-h">Themen</h2>
-  <div class="tiles">
-    <a class="tile c1" href="#/wetter"><span class="t-icon">🌤️</span><span class="t-title">Wetter</span><span class="t-sub" id="tile-weather-sub">Live für Málaga</span></a>
-    <a class="tile c2" href="#/packliste"><span class="t-icon">🎒</span><span class="t-title">Packliste</span><span class="t-sub">zum Abhaken</span></a>
-    <a class="tile c3" href="#/sehenswertes"><span class="t-icon">🏰</span><span class="t-title">Sehenswertes</span><span class="t-sub">Málaga entdecken</span></a>
-    <a class="tile c4" href="#/maerkte"><span class="t-icon">🎄</span><span class="t-title">Weihnachtsmärkte</span><span class="t-sub">Lichter &amp; Stände</span></a>
-    <a class="tile c5" href="#/wunschliste"><span class="t-icon">💌</span><span class="t-title">Wunschliste</span><span class="t-sub">Eure Wünsche</span></a>
-  </div>
 </section>
 
 <!-- ================= TAGE ================= -->
@@ -277,6 +285,7 @@
 
 <section id="view-maerkte" class="view" hidden>
   <a class="back" href="#/">← Übersicht</a>
+  <div class="ill big" data-img="maerkte"><svg viewBox="0 0 400 180" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Weihnachtsbeleuchtung in Málaga"><use href="#ill-wine"/></svg></div>
   <h2>Weihnachtsmärkte &amp; Lichter in Málaga</h2>
   <p class="note">Alle Daten sind vorläufig: Für 2026/27 liegt keine bestätigte offizielle Ankündigung der Stadt vor, die Portale widersprechen sich teils. Bitte kurz vor der Reise beim Ayuntamiento de Málaga prüfen.</p>
   <div class="grid">
@@ -311,7 +320,24 @@
 
 </main>
 
-<footer class="wrap foot"><p>Gemacht für den Málaga-Trip 2026 · ¡Feliz cumpleaños! 🥂</p></footer>
+<footer class="wrap foot">
+  <p>Gemacht für den Málaga-Trip 2026 · ¡Feliz cumpleaños! 🥂</p>
+  <details class="credits">
+    <summary>Bildnachweis</summary>
+    <p>Alle Fotos stammen von Wikimedia Commons, wurden zugeschnitten und verkleinert und sind teils Symbolbilder (nicht die gebuchten Orte/Anbieter).</p>
+    <ul>
+      <li>Hafen Málaga (Villa-Banner): Zarateman, <a href="https://commons.wikimedia.org/wiki/File:M%C3%A1laga_-_Paseo_del_Muelle_Uno_7.jpg" target="_blank" rel="noopener">Commons</a>, <a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank" rel="noopener">CC0</a></li>
+      <li>Anreise (Flügel): Jason Trbovich, <a href="https://commons.wikimedia.org/wiki/File:The_return_(Explored)_-_Flickr_-_serbo.tech.jpg" target="_blank" rel="noopener">Commons</a>, <a href="https://creativecommons.org/licenses/by/2.0/" target="_blank" rel="noopener">CC BY 2.0</a></li>
+      <li>Weinprobe (Symbolbild): Christina Snyder, <a href="https://commons.wikimedia.org/wiki/File:Wine_Tasting_at_Marsala.jpg" target="_blank" rel="noopener">Commons</a>, <a href="https://creativecommons.org/licenses/by/2.0/" target="_blank" rel="noopener">CC BY 2.0</a></li>
+      <li>Pilates/Yoga (Symbolbild): bady qb, <a href="https://commons.wikimedia.org/wiki/File:Yoga_in_the_beach_(Unsplash).jpg" target="_blank" rel="noopener">Commons</a>, <a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank" rel="noopener">CC0</a></li>
+      <li>Caminito del Rey: Diego Delso, <a href="https://commons.wikimedia.org/wiki/File:Caminito_del_Rey,_M%C3%A1laga,_Espa%C3%B1a,_2023-05-18,_DD_12.jpg" target="_blank" rel="noopener">Commons</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a></li>
+      <li>Frigiliana: Quintin Soloviev, <a href="https://commons.wikimedia.org/wiki/File:Frigiliana,_Spain.jpg" target="_blank" rel="noopener">Commons</a>, <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a></li>
+      <li>Rückflug (Flügelspitze im Abendlicht): Jaideep Krishnan, <a href="https://commons.wikimedia.org/wiki/File:Skytail_(21158277).jpeg" target="_blank" rel="noopener">Commons</a>, <a href="https://creativecommons.org/licenses/by/3.0/" target="_blank" rel="noopener">CC BY 3.0</a></li>
+      <li>Calle Larios zu Weihnachten: Adrianna Calvo, <a href="https://commons.wikimedia.org/wiki/File:Calle_Larios_Christmas.jpeg" target="_blank" rel="noopener">Commons</a>, <a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank" rel="noopener">CC0</a></li>
+      <li>Schrift „Kaushan Script“: Impallari Type, SIL Open Font License 1.1</li>
+    </ul>
+  </details>
+</footer>
 
 <script src="malaga-trip-2026-config.js"></script>
 <script src="malaga-trip-2026-wishes-store.js"></script>
